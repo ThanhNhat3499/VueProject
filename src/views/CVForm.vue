@@ -1,7 +1,7 @@
 <template>
   <div class="cv-form">
     <HeadPart />
-    <BodyPart />
+    <BodyPart :dataCV='dataCV' />
   </div>
 </template>
 
@@ -10,6 +10,7 @@
 import HeadPart from './HeadPart.vue'
 import BodyPart from './BodyPart.vue'
 export default {
+  props:["dataCV"],
   components:{
     HeadPart,
     BodyPart
@@ -32,7 +33,7 @@ export default {
     .rfr-container{
         flex-direction: column;
     }
-    .reference-left, .reference-right{
+    #reference .reference-left, #reference .reference-right{
         width: 100%;
     }
     .reference-left{
@@ -46,7 +47,7 @@ export default {
     .cv-form, .top, .rfr-container, .row, .top, .bottom{
         flex-direction: column;
     }
-    .name{
+    .head-part .name{
         font-size: 35px;
     }
     .avatar{

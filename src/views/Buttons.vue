@@ -1,15 +1,18 @@
 <template>
     <div id="btns">
-        <button type="button" class="btn btn-dark" id="edit-btn" @click="disable=!disable">Edit</button>
-        <button type="button" class="btn btn-info" id="save-btn">Save</button>
+        <button type="button" class="btn btn-dark" id="edit-btn" @click='openInputFields'>Edit</button>
+        <button type="button" class="btn btn-info" id="save-btn" @click="saveEditing">Save</button>
     </div>
 </template>
 
 <script>
   export default {
-    data(){
-      return {
-        disable: true
+  methods: {
+      openInputFields() {
+        this.$emit("open",false);
+      },
+      saveEditing() {
+
       }
     }
   };

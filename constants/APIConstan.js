@@ -1,0 +1,1 @@
+export const ApiConstant = {BASE_URL: 'https://back-end-for-cv-thanh-nhat.herokuapp.com/'};

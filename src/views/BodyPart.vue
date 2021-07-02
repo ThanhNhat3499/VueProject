@@ -2,8 +2,8 @@
   <div class="body-part">
     <div class="body-left">
         <Avatar />
-        <AboutMe />
-        <Contact /> 
+        <AboutMe :dataCV='dataCV' />
+        <Contact @getChildData="contactData" :dataCV='dataCV' /> 
         <Skills />
     </div>
     <div class="body-right">
@@ -24,6 +24,20 @@ import Education from '../components/Education.vue'
 import Reference from '../components/Reference.vue'
 
 export default {
+  props:["dataCV"],
+  data(){
+      return{
+          childData:{
+
+          }
+      }
+  },
+  methods:{
+      contactData(reply){
+          this.childData=reply;
+          console.log(this.childData)
+      }
+  },
   components:{
     Avatar,
     AboutMe,
@@ -82,5 +96,12 @@ export default {
     margin-top: 1%;
     margin-bottom: 0%;
     border: 1px solid #2892a8;
+}
+textarea, input{
+    width: 100%;
+    color: black;
+}
+textarea:disabled, input:disabled{
+    border: none;
 }
 </style>
